@@ -1,0 +1,24 @@
+Issues:
+- local storage is not deleted when exiting chrome
+- post/get requests handling
+
+
+Facebook ->
+Get user and pass from db ->
+
+myScript.js ->
+if it is facebook ->
+
+check if user is logged in to the extension ->
+get user and pass if exists in the db for facebook
+
+user clicked on 'login' ->
+check if user is logged in to the extension ->
+the extension asks the user to update or create new creds for facebook ->
+create or update accordingly
+
+
+
+
+
+

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+</head>
+<h1>data</h1>
+<p>Hi there!</p>
+
+<label for="uname"><b>ID</b></label>
+<input type="text" id="myUser" placeholder="Enter Your ID" name="uname" required>
+
+
+<label for="psw"><b>Master Password</b></label>
+<input type="password" id="myPassword" placeholder="Enter Your Master Password" name="psw" required>
+<button id="submit" onclick="save_and_post()">GO!</button>
+
+
+<script>
+    function save_and_post() {
+        const myUser = document.getElementById('myUser').value;
+        const myPassword = document.getElementById('myPassword').value;
+        const data = {
+            myUser,
+            myPassword
+        };
+        const options = {
+            method: 'POST',
+            headers: { //we need a header in order to specify the fact that we are going to send something as JSON
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(data),
+        };
+        fetch('/api', options).then(response => {
+            console.log(response);
+        });
+    }
+
+    //const data = {
+    //day: 'Sunday',
+    //month: 'February',
+    // year: '1999'
+    //};
+    //document.getElementById('day').textContent = data.day;
+    //document.getElementById('month').textContent = data.month;
+    //document.getElementById('year').textContent = data.year;
+</script>
+
+</html>
